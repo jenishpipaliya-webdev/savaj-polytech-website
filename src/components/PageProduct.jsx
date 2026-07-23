@@ -1,21 +1,76 @@
 import React, { useState, useEffect } from "react";
 import ProductHero from "./ProductHero";
-import { ChevronDown, Phone, Layers } from "lucide-react";
+import { Layers } from "lucide-react";
 import "./Pageproduct.css";
 
-// Direct src/assets/ folder image loader (Vercel & Production Safe)
-const productImagesMap = import.meta.glob('../assets/*.{jpg,jpeg,png,webp}', {
-  eager: true,
-  as: 'url',
-});
+// 1. FLOOR PROTECTION SHEET
+import fps1 from "../assets/floorprotectionsheet1.jpg";
+import fps2 from "../assets/floorprotectionsheet2.jpg";
+import fps3 from "../assets/floorprotectionsheet3.jpg";
 
-const getProductImages = (productKey) => {
-  // Finds exact image paths directly from src/assets/
-  const img1 = productImagesMap[`../assets/${productKey}1.jpg`];
-  const img2 = productImagesMap[`../assets/${productKey}2.jpg`];
-  const img3 = productImagesMap[`../assets/${productKey}3.jpg`];
+// 2. CONSTRUCTION PROTECTION SHEET
+import cps1 from "../assets/constructionprotectionsheet1.jpg";
+import cps2 from "../assets/constructionprotectionsheet2.jpg";
+import cps3 from "../assets/constructionprotectionsheet3.jpg";
 
-  return [img1, img2, img3];
+// 3. INDUSTRIAL PACKAGING SHEETS
+import ips1 from "../assets/industrialpackagingsheets1.jpg";
+import ips2 from "../assets/industrialpackagingsheets2.jpg";
+import ips3 from "../assets/industrialpackagingsheets3.jpg";
+
+// 4. PP SEPARATOR SHEETS
+import pps1 from "../assets/ppseparatorsheets1.jpg";
+import pps2 from "../assets/ppseparatorsheets2.jpg";
+import pps3 from "../assets/ppseparatorsheets3.jpg";
+
+// 5. STORAGE ORGANIZING SHEETS
+import sos1 from "../assets/storageorganizingsheets1.jpg";
+import sos2 from "../assets/storageorganizingsheets2.jpg";
+import sos3 from "../assets/storageorganizingsheets3.jpg";
+
+// 6. ADVERTISING DISPLAY SHEETS
+import ads1 from "../assets/advertisingdisplaysheets1.jpg";
+import ads2 from "../assets/advertisingdisplaysheets2.jpg";
+import ads3 from "../assets/advertisingdisplaysheets3.jpg";
+
+// 7. SIGNAGE BOARDS
+import sb1 from "../assets/signageboards1.jpg";
+import sb2 from "../assets/signageboards2.jpg";
+import sb3 from "../assets/signageboards3.jpg";
+
+// 8. MULTIPURPOSE PLASTIC SHEETS
+import mps1 from "../assets/multipurposeplasticsheets1.jpg";
+import mps2 from "../assets/multipurposeplasticsheets2.jpg";
+import mps3 from "../assets/multipurposeplasticsheets3.jpg";
+
+// 9. SUNPACK SHEETS
+import sps1 from "../assets/sunpacksheets1.jpg";
+import sps2 from "../assets/sunpacksheets2.jpg";
+import sps3 from "../assets/sunpacksheets3.jpg";
+
+// 10. FLUTE SHEET BOARD
+import fsb1 from "../assets/flutesheetboard1.jpg";
+import fsb2 from "../assets/flutesheetboard2.jpg";
+import fsb3 from "../assets/flutesheetboard3.jpg";
+
+// 11. PP CORRUGATED EDGE PROTECTORS
+import ep1 from "../assets/ppcorrugatededgeprotectors1.jpg";
+import ep2 from "../assets/ppcorrugatededgeprotectors2.jpg";
+import ep3 from "../assets/ppcorrugatededgeprotectors3.jpg";
+
+// Direct Explicit Image Map
+const imageStore = {
+  "floor-protection-sheet": [fps1, fps2, fps3],
+  "construction-protection-sheet": [cps1, cps2, cps3],
+  "industrial-packaging-sheets": [ips1, ips2, ips3],
+  "pp-separator-sheets": [pps1, pps2, pps3],
+  "storage-organizing-sheets": [sos1, sos2, sos3],
+  "advertising-display-sheets": [ads1, ads2, ads3],
+  "signage-boards": [sb1, sb2, sb3],
+  "multipurpose-plastic-sheets": [mps1, mps2, mps3],
+  "sunpack-sheets": [sps1, sps2, sps3],
+  "flute-sheet-board": [fsb1, fsb2, fsb3],
+  "pp-corrugated-edge-protectors": [ep1, ep2, ep3],
 };
 
 // Common Standard Colors
@@ -45,7 +100,7 @@ const productsData = [
     name: "Floor Protection Sheet",
     shortName: "Floor Protection",
     description: "Savaj Polytech PP corrugated sheets are engineered to safeguard flooring during construction, renovation, or painting. Their tough surface shields against scratches, spills, and debris while remaining lightweight, reusable, and easy to install on busy worksites.",
-    images: getProductImages("floorprotectionsheet"),
+    images: imageStore["floor-protection-sheet"],
     tableData: commonSpecsTable,
     colors: commonColors,
     faqs: [
@@ -60,7 +115,7 @@ const productsData = [
     name: "Construction Protection Sheet",
     shortName: "Construction Sheet",
     description: "Built to shield doors, windows, walls, and finished surfaces during interior and structural work. Savaj Polytech polypropylene corrugated boards withstand impact, dust, paint, and harsh weather conditions.",
-    images: getProductImages("constructionprotectionsheet"),
+    images: imageStore["construction-protection-sheet"],
     tableData: commonSpecsTable,
     colors: commonColors,
     faqs: [
@@ -75,7 +130,7 @@ const productsData = [
     name: "Industrial Packaging Sheets",
     shortName: "Industrial Packaging",
     description: "An eco-friendly alternative for industrial logistics. Savaj Polytech PP corrugated packaging sheets deliver shock absorption, moisture resistance, and lightweight strength to protect boxes and crates in transit.",
-    images: getProductImages("industrialpackagingsheets"),
+    images: imageStore["industrial-packaging-sheets"],
     tableData: commonSpecsTable,
     colors: commonColors,
     faqs: [
@@ -90,7 +145,7 @@ const productsData = [
     name: "PP Separator Sheets",
     shortName: "PP Separators",
     description: "High-durability layer pads designed for stacking and securing items like glass bottles, cans, and ceramic tiles during shipping. Savaj Polytech separator sheets prevent breakage and improve stacking stability.",
-    images: getProductImages("ppseparatorsheets"),
+    images: imageStore["pp-separator-sheets"],
     tableData: commonSpecsTable,
     colors: commonColors,
     faqs: [
@@ -105,7 +160,7 @@ const productsData = [
     name: "Storage Organizing Sheets",
     shortName: "Storage Bins",
     description: "Ideal for constructing waterproof, chemical-proof, and pest-resistant warehouse bins, trays, and shelf dividers. Savaj Polytech organizing sheets keep your storage facility structured and long-lasting.",
-    images: getProductImages("storageorganizingsheets"),
+    images: imageStore["storage-organizing-sheets"],
     tableData: commonSpecsTable,
     colors: commonColors,
     faqs: [
@@ -120,7 +175,7 @@ const productsData = [
     name: "Advertising Display Sheets",
     shortName: "Advertising Display",
     description: "High-impact PP corrugated boards crafted for promotional panels, exhibition displays, and temporary event branding. Savaj Polytech display sheets deliver vibrant graphics with weather-resistant durability.",
-    images: getProductImages("advertisingdisplaysheets"),
+    images: imageStore["advertising-display-sheets"],
     tableData: commonSpecsTable,
     colors: commonColors,
     faqs: [
@@ -135,7 +190,7 @@ const productsData = [
     name: "Signage Boards",
     shortName: "Signage Boards",
     description: "Premium PP corrugated sign boards engineered for long-lasting indoor and outdoor communication. Savaj Polytech signage boards support UV printing, cutting, and lamination for crisp, professional visuals.",
-    images: getProductImages("signageboards"),
+    images: imageStore["signage-boards"],
     tableData: commonSpecsTable,
     colors: commonColors,
     faqs: [
@@ -150,7 +205,7 @@ const productsData = [
     name: "Multipurpose Plastic Sheets",
     shortName: "Multipurpose Sheets",
     description: "Versatile, lightweight, and tough corrugated plastic sheets built for quick DIY projects, room partitions, prototypes, and custom creative installations by Savaj Polytech.",
-    images: getProductImages("multipurposeplasticsheets"),
+    images: imageStore["multipurpose-plastic-sheets"],
     tableData: commonSpecsTable,
     colors: commonColors,
     faqs: [
@@ -165,7 +220,7 @@ const productsData = [
     name: "Sunpack Sheets",
     shortName: "Sunpack Sheets",
     description: "Popularly known as Sunpack Sheets, Savaj Polytech PP corrugated boards combine lightweight flexibility with superior printability, making them widely used in real estate advertising, retail display, and protective wrapping.",
-    images: getProductImages("sunpacksheets"),
+    images: imageStore["sunpack-sheets"],
     tableData: commonSpecsTable,
     colors: commonColors,
     faqs: [
@@ -180,7 +235,7 @@ const productsData = [
     name: "Flute Sheet Board",
     shortName: "Flute Sheet Board",
     description: "High-density polypropylene flute boards designed for multi-industrial applications. Featuring a fluted hollow core, Savaj Polytech flute boards offer extreme strength-to-weight ratio for heavy packaging and protective paneling.",
-    images: getProductImages("flutesheetboard"),
+    images: imageStore["flute-sheet-board"],
     tableData: commonSpecsTable,
     colors: commonColors,
     faqs: [
@@ -195,7 +250,7 @@ const productsData = [
     name: "PP Corrugated Edge Protectors",
     shortName: "Edge Protectors",
     description: "High-grade rigid polypropylene edge and corner protectors designed to safeguard palletized goods, sheet metal, and furniture from strap cutting and impact damage during transit.",
-    images: getProductImages("ppcorrugatededgeprotectors"),
+    images: imageStore["pp-corrugated-edge-protectors"],
     tableData: commonSpecsTable,
     colors: commonColors,
     faqs: [
@@ -216,7 +271,7 @@ export default function Pageproduct() {
   // Auto Carousel Image Transition
   useEffect(() => {
     const interval = setInterval(() => {
-      if (selectedProduct.images.length > 0) {
+      if (selectedProduct.images && selectedProduct.images.length > 0) {
         setCurrentImgIndex((prev) => (prev + 1) % selectedProduct.images.length);
       }
     }, 3500);
@@ -239,13 +294,13 @@ export default function Pageproduct() {
   };
 
   const handleNextImg = () => {
-    if (selectedProduct.images.length > 0) {
+    if (selectedProduct.images && selectedProduct.images.length > 0) {
       setCurrentImgIndex((prev) => (prev + 1) % selectedProduct.images.length);
     }
   };
 
   const handlePrevImg = () => {
-    if (selectedProduct.images.length > 0) {
+    if (selectedProduct.images && selectedProduct.images.length > 0) {
       setCurrentImgIndex((prev) => (prev - 1 + selectedProduct.images.length) % selectedProduct.images.length);
     }
   };
@@ -257,7 +312,7 @@ export default function Pageproduct() {
   return (
     <div>
       {/* Product Hero Section */}
-     
+      <ProductHero />
 
       <section className="products-section">
         {/* Background Shapes */}
@@ -297,7 +352,7 @@ export default function Pageproduct() {
             {/* Auto Carousel */}
             <div className="carousel-container">
               <img
-                src={selectedProduct.images[currentImgIndex]}
+                src={selectedProduct.images ? selectedProduct.images[currentImgIndex] : ""}
                 alt={selectedProduct.name}
                 className="carousel-image"
                 onError={(e) => {
@@ -309,7 +364,7 @@ export default function Pageproduct() {
               <button className="carousel-btn next" onClick={handleNextImg}>❯</button>
 
               <div className="carousel-dots">
-                {selectedProduct.images.map((_, idx) => (
+                {selectedProduct.images && selectedProduct.images.map((_, idx) => (
                   <span
                     key={idx}
                     className={`dot ${idx === currentImgIndex ? "active" : ""}`}
