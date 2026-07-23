@@ -3,12 +3,20 @@ import ProductHero from "./ProductHero";
 import { ChevronDown, Phone, Layers } from "lucide-react";
 import "./Pageproduct.css";
 
-// Public folder absolute path loader (Works 100% everywhere: Vercel, Netlify, Hostinger)
-const getProductImages = (productKey) => [
-  `/productpageimage/${productKey}1.jpg`,
-  `/productpageimage/${productKey}2.jpg`,
-  `/productpageimage/${productKey}3.jpg`,
-];
+// Direct src/assets/ folder image loader (Vercel & Production Safe)
+const productImagesMap = import.meta.glob('../assets/*.{jpg,jpeg,png,webp}', {
+  eager: true,
+  as: 'url',
+});
+
+const getProductImages = (productKey) => {
+  // Finds exact image paths directly from src/assets/
+  const img1 = productImagesMap[`../assets/${productKey}1.jpg`];
+  const img2 = productImagesMap[`../assets/${productKey}2.jpg`];
+  const img3 = productImagesMap[`../assets/${productKey}3.jpg`];
+
+  return [img1, img2, img3];
+};
 
 // Common Standard Colors
 const commonColors = [
@@ -208,7 +216,9 @@ export default function Pageproduct() {
   // Auto Carousel Image Transition
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImgIndex((prev) => (prev + 1) % selectedProduct.images.length);
+      if (selectedProduct.images.length > 0) {
+        setCurrentImgIndex((prev) => (prev + 1) % selectedProduct.images.length);
+      }
     }, 3500);
 
     return () => clearInterval(interval);
@@ -229,11 +239,15 @@ export default function Pageproduct() {
   };
 
   const handleNextImg = () => {
-    setCurrentImgIndex((prev) => (prev + 1) % selectedProduct.images.length);
+    if (selectedProduct.images.length > 0) {
+      setCurrentImgIndex((prev) => (prev + 1) % selectedProduct.images.length);
+    }
   };
 
   const handlePrevImg = () => {
-    setCurrentImgIndex((prev) => (prev - 1 + selectedProduct.images.length) % selectedProduct.images.length);
+    if (selectedProduct.images.length > 0) {
+      setCurrentImgIndex((prev) => (prev - 1 + selectedProduct.images.length) % selectedProduct.images.length);
+    }
   };
 
   const toggleFaq = (index) => {
@@ -243,7 +257,7 @@ export default function Pageproduct() {
   return (
     <div>
       {/* Product Hero Section */}
-      
+     
 
       <section className="products-section">
         {/* Background Shapes */}
