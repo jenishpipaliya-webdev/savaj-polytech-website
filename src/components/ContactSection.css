@@ -1,0 +1,263 @@
+/* Container & Base Layout */
+.contact-main-section {
+  width: 100%;
+  padding: 60px 24px 100px 24px;
+  background-color: #ffffff;
+}
+
+.contact-section-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .contact-section-container {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+  }
+}
+
+/* ==========================================
+   LEFT COLUMN: FORM STYLING
+   ========================================== */
+
+.contact-form-title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #0b3b60; /* Brand Navy Blue */
+  letter-spacing: -0.8px;
+  margin-bottom: 12px;
+}
+
+.contact-form-subtitle {
+  font-size: 15.5px;
+  line-height: 1.68;
+  color: #475569;
+  margin-bottom: 32px;
+  max-width: 520px;
+}
+
+.contact-form-element {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-input-field {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 15px;
+  color: #0f172a;
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 50px;
+  outline: none;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.form-input-field::placeholder {
+  color: #94a3b8;
+}
+
+.form-input-field:focus {
+  border-color: #0072ce; /* Brand Royal Blue Focus */
+  box-shadow: 0 0 0 4px rgba(0, 114, 206, 0.1);
+}
+
+.textarea-field {
+  border-radius: 24px;
+  resize: vertical;
+  min-height: 130px;
+  font-family: inherit;
+}
+
+/* SAVAJ POLYTECH BRAND BUTTON (Blue Theme Capsule) */
+.form-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #0b3b60 0%, #0072ce 100%);
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px 8px 36px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  width: fit-content;
+  min-width: 280px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 10px;
+  box-shadow: 0 8px 20px rgba(0, 114, 206, 0.22);
+}
+
+.form-submit-btn:hover {
+  background: linear-gradient(135deg, #0072ce 0%, #0b3b60 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 114, 206, 0.35);
+}
+
+.form-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-circle-arrow {
+  width: 44px;
+  height: 44px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0072ce;
+  transition: transform 0.3s ease;
+}
+
+.form-submit-btn:hover .btn-circle-arrow {
+  transform: translateX(4px);
+}
+
+.spinner-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.form-alert-success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f0f9ff;
+  color: #0369a1;
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 1px solid #bae6fd;
+  font-size: 14.5px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* ==========================================
+   RIGHT COLUMN: BRANDED CONTACT INFO CARD
+   ========================================== */
+
+.contact-info-card {
+  background-color: #f8fafc;
+  padding: 44px 40px;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  border: 1px solid #f1f5f9;
+}
+
+.info-item-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.info-icon-circle {
+  width: 58px;
+  height: 58px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(11, 59, 96, 0.08);
+  border: 1px solid #f1f5f9;
+  flex-shrink: 0;
+}
+
+.info-icon {
+  color: #0072ce; /* Royal Blue Accent Icon */
+}
+
+.info-text-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.3px;
+}
+
+.info-content {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.address-text {
+  font-weight: 600;
+  color: #334155;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.info-highlight-link {
+  color: #0072ce;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.info-highlight-link:hover {
+  color: #0b3b60;
+}
+
+.info-time-highlight {
+  color: #0072ce;
+  font-weight: 800;
+}
+
+.info-holiday-highlight {
+  color: #ef4444; /* Standard Red Holiday Indicator */
+  font-weight: 800;
+}
+
+/* RESPONSIVE OVERRIDES */
+@media (max-width: 768px) {
+  .contact-main-section {
+    padding: 40px 16px 60px 16px;
+  }
+
+  .contact-info-card {
+    padding: 30px 20px;
+    border-radius: 20px;
+    gap: 28px;
+  }
+
+  .info-icon-circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .info-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .form-submit-btn {
+    width: 100%;
+  }
+}

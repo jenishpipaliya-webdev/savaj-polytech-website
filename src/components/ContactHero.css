@@ -1,12 +1,12 @@
 /* Outer Section Wrapper */
-.about-hero-wrapper {
+.contact-hero-wrapper {
   position: relative;
   width: 100%;
   margin-bottom: 60px;
 }
 
-/* 1. HERO IMAGE BANNER (Desktop Original Setup) */
-.about-hero-bg-wrapper {
+/* 1. HERO IMAGE BANNER (Normal Desktop Original Setup) */
+.contact-hero-bg-wrapper {
   position: relative;
   width: 100%;
   height: clamp(600px, 82vh, 760px);
@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 
-.about-hero-bg-slide {
+.contact-hero-bg-slide {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -26,34 +26,34 @@
   transition: opacity 1.2s ease-in-out, transform 6s ease-out;
 }
 
-.about-hero-bg-slide.is-active {
+.contact-hero-bg-slide.is-active {
   opacity: 1;
   transform: scale(1);
 }
 
-.about-hero-overlay {
+.contact-hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(11, 59, 96, 0.5) 0%,
+    rgba(11, 59, 96, 0.55) 0%,
     rgba(0, 0, 0, 0.25) 100%
   );
   z-index: 2;
 }
 
-/* 2. MARQUEE TICKER LAYER (Desktop Original Setup) */
-.about-bottom-ticker-layer {
+/* 2. MARQUEE TICKER LAYER (Normal Desktop Original Setup) */
+.contact-bottom-ticker-layer {
   position: relative;
   width: 100%;
   background-color: #ffffff;
   border-bottom: 1px solid #e2e8f0;
   z-index: 10;
-  padding: 0;
+  padding: 0; /* Normal desktop par extra height/padding zero rahegi */
 }
 
-/* 3. ABSOLUTE CONTAINER - DESKTOP ORIGINAL SETUP */
-.about-hero-container {
+/* 3. ABSOLUTE CONTAINER - NORMAL DESKTOP ORIGINAL SETUP */
+.contact-hero-container {
   position: absolute;
   inset: 0;
   z-index: 30;
@@ -66,8 +66,8 @@
   align-items: flex-end;
 }
 
-/* FLOATING CARD - DESKTOP ORIGINAL SETUP */
-.about-hero-card {
+/* FLOATING CARD - NORMAL DESKTOP ORIGINAL SETUP */
+.contact-hero-card {
   pointer-events: auto;
   background: linear-gradient(145deg, #0b3b60 0%, #0072ce 100%);
   color: #ffffff;
@@ -81,38 +81,39 @@
 }
 
 /* Card Header Line & Tag */
-.about-card-top {
+.contact-card-top {
   display: flex;
   align-items: center;
   gap: 20px;
   margin-bottom: 22px;
 }
 
-.about-card-line {
+.contact-card-line {
   width: 60px;
   height: 2px;
   background-color: rgba(255, 255, 255, 0.75);
 }
 
-.about-company-tag {
+.contact-company-tag {
   font-size: 16px;
   font-weight: 700;
   color: #e0f2fe;
   letter-spacing: 0.5px;
 }
 
-/* Main Title "ABOUT" */
-.about-card-title {
-  font-size: clamp(3.5rem, 6vw, 5.2rem);
+/* Main Title "CONTACT" */
+.contact-card-title {
+  font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 900;
   line-height: 1;
   letter-spacing: -1.5px;
   margin: 0 0 20px 0;
   color: #ffffff;
+  text-transform: uppercase;
 }
 
 /* Subtitle Description */
-.about-card-desc {
+.contact-card-desc {
   font-size: 16.5px;
   line-height: 1.68;
   color: #f0f9ff;
@@ -122,7 +123,7 @@
 }
 
 /* Breadcrumb Navigation Pill */
-.about-breadcrumb-pill {
+.contact-breadcrumb-pill {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -159,67 +160,67 @@
    ========================================================= */
 
 @media (max-width: 992px) {
-  .about-hero-bg-wrapper {
+  .contact-hero-bg-wrapper {
     height: 520px;
   }
 
-  .about-hero-card {
+  .contact-hero-card {
     max-width: 520px;
     padding: 44px 36px;
   }
 }
 
 @media (max-width: 768px) {
-  .about-hero-wrapper {
+  .contact-hero-wrapper {
     margin-bottom: 30px;
   }
 
-  .about-hero-bg-wrapper {
-    height: 320px; /* Reduced mobile height for compact banner */
+  .contact-hero-bg-wrapper {
+    height: 320px; /* Mobile par banner chota rahega */
   }
 
-  .about-hero-container {
+  .contact-hero-container {
     inset: auto;
-    top: 130px; /* Positions card neatly over the ticker boundary */
+    top: 130px; /* Card ko banner-ticker joint par overlay karega */
     padding: 0 16px;
   }
 
-  .about-hero-card {
+  .contact-hero-card {
     max-width: 100%;
     border-radius: 20px;
     padding: 24px 20px;
   }
 
-  .about-card-title {
-    font-size: 2.4rem;
+  .contact-card-title {
+    font-size: 2.2rem;
   }
 
-  .about-card-desc {
+  .contact-card-desc {
     font-size: 14px;
     margin-bottom: 20px;
   }
 
-  .about-bottom-ticker-layer {
-    padding-top: 130px; /* Space reserved so marquee text scrolls cleanly below the card */
+  .contact-bottom-ticker-layer {
+    padding-top: 130px; /* Sirf Mobile/Tablet me marquee niche hoke space banayega */
     padding-bottom: 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .about-hero-bg-wrapper {
+  .contact-hero-bg-wrapper {
     height: 290px;
   }
 
-  .about-hero-container {
+  .contact-hero-container {
     top: 110px;
   }
 
-  .about-hero-card {
+  .contact-hero-card {
     padding: 20px 16px;
     border-radius: 16px;
   }
 
-  .about-bottom-ticker-layer {
+  .contact-bottom-ticker-layer {
     padding-top: 140px;
   }
 }

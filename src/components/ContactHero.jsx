@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Home, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import MarqueeTicker from './MarqueeTicker';
-import './ProductHero.css';
+import './ContactHero.css';
 
 import bgImg1 from '../assets/floorsheet.jpeg';
 import bgImg2 from '../assets/Construction.jpeg';
 import bgImg3 from '../assets/packaging.jpeg';
 import bgImg4 from '../assets/multipurpose.jpeg';
 
-export default function ProductHero() {
+export default function ContactHero() {
   const images = [bgImg1, bgImg2, bgImg3, bgImg4];
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
@@ -22,51 +22,50 @@ export default function ProductHero() {
   }, [images.length]);
 
   return (
-    <section className="product-hero-wrapper">
+    <section className="contact-hero-wrapper">
       
-      {/* 1. Top Image Banner Area */}
-      <div className="product-hero-bg-wrapper">
+      {/* 1. Top Image Banner */}
+      <div className="contact-hero-bg-wrapper">
         {images.map((img, index) => (
           <div
             key={index}
-            className={`product-hero-bg-slide ${
+            className={`contact-hero-bg-slide ${
               index === currentImgIndex ? 'is-active' : ''
             }`}
             style={{ backgroundImage: `url(${img})` }}
           />
         ))}
-        {/* Dark Gradient Overlay over Background Image */}
-        <div className="product-hero-overlay"></div>
+        <div className="contact-hero-overlay"></div>
       </div>
 
-      {/* 2. Absolute Floating Card */}
-      <div className="product-hero-container">
-        <div className="product-hero-card">
+      {/* 2. Absolute Card - Overlaps Image Banner & Marquee Ticker */}
+      <div className="contact-hero-container">
+        <div className="contact-hero-card">
           
-          <div className="product-card-top">
-            <div className="product-card-line"></div>
-            <span className="product-company-tag">Savaj Polytech</span>
+          <div className="contact-card-top">
+            <div className="contact-card-line"></div>
+            <span className="contact-company-tag">Savaj Polytech</span>
           </div>
 
-          <h1 className="product-card-title">PRODUCTS</h1>
+          <h1 className="contact-card-title">CONTACT</h1>
 
-          <p className="product-card-desc">
-            Explore our high-performance PP corrugated sheets, floor protection rolls, and innovative polymer solutions built for industrial strength and reliability.
+          <p className="contact-card-desc">
+            We are Gujarat's premier PP corrugated sheet manufacturer engineered for continuous growth, industrial durability, and packaging innovation.
           </p>
 
-          <div className="product-breadcrumb-pill">
+          <div className="contact-breadcrumb-pill">
             <Link to="/" className="breadcrumb-home-link">
               <Home size={15} />
             </Link>
             <ChevronRight size={14} className="breadcrumb-arrow" />
-            <span className="breadcrumb-current">Products</span>
+            <span className="breadcrumb-current">Contact</span>
           </div>
 
         </div>
       </div>
 
-      {/* 3. Marquee Ticker directly below image */}
-      <div className="product-bottom-ticker-layer">
+      {/* 3. Marquee Ticker Layer Directly Below (Text runs under the overlapping card) */}
+      <div className="contact-bottom-ticker-layer">
         <MarqueeTicker />
       </div>
 

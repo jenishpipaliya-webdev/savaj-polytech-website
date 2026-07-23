@@ -1,0 +1,274 @@
+/* Light Clean Premium Footer Base */
+.custom-footer {
+  width: 100%;
+  background-color: #f1f8ff; /* Crisp Light Gray/White Background for Orange Logo Pop */
+  color: #ecf2fd;
+  padding-top: 70px;
+  font-family: inherit;
+  border-top: 1px solid #e7eef8;
+}
+
+.footer-main-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 60px 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 992px) {
+  .footer-main-container {
+    grid-template-columns: 1.2fr 0.8fr 1fr 1.2fr;
+    gap: 48px;
+  }
+}
+
+/* COLUMN 1: BRAND LOGO & DESC */
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-logo-svg {
+  height: 68px; /* Clean proportional height */
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-brand-desc {
+  font-size: 14.5px;
+  line-height: 1.68;
+  color: #475569;
+  margin: 0;
+}
+
+/* COLUMN TITLES */
+.footer-col-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0b3b60; /* Dark Navy Accent Header */
+  margin: 0 0 24px 0;
+  position: relative;
+  letter-spacing: 0.3px;
+}
+
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 36px;
+  height: 3px;
+  background-color: #0072ce; /* Royal Blue Line Accent */
+  border-radius: 2px;
+}
+
+/* COLUMN 2: QUICK LINKS */
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-links-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #334155;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.link-arrow-icon {
+  color: #0072ce;
+  transition: transform 0.25s ease;
+}
+
+.footer-links-list a:hover {
+  color: #0072ce;
+  transform: translateX(4px);
+}
+
+.footer-links-list a:hover .link-arrow-icon {
+  transform: translate(2px, -2px);
+}
+
+/* COLUMN 3: WORKING DAYS */
+.working-hours-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.working-day-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.days-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.time-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.time-arrow {
+  color: #0072ce;
+}
+
+.time-row.holiday span {
+  color: #ef4444; /* Clear Red Holiday Highlight */
+}
+
+/* COLUMN 4: LET'S TALK CONTACT DETAILS */
+.contact-details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-details-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.contact-icon {
+  color: #0072ce;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-details-list a {
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.contact-details-list a:hover {
+  color: #0072ce;
+}
+
+/* ==========================================
+   BOTTOM COPYRIGHT & SOCIAL BAR
+   ========================================== */
+
+.footer-bottom-bar {
+  background-color: #ffffff; /* Clean White Footer Sub-bar */
+  border-top: 1px solid #e2e8f0;
+  padding: 20px 24px;
+}
+
+.footer-bottom-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-container {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.copyright-text {
+  font-size: 13.5px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Social Media Buttons */
+.social-media-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0b3b60;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon-btn:hover {
+  background-color: #0072ce;
+  border-color: #0072ce;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 114, 206, 0.25);
+}
+
+/* Legal Links */
+.legal-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+}
+
+.legal-links a {
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.legal-links a:hover {
+  color: #0072ce;
+}
+
+.dot-divider {
+  color: #cbd5e1;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 768px) {
+  .custom-footer {
+    padding-top: 50px;
+  }
+
+  .footer-main-container {
+    gap: 36px;
+  }
+
+  .footer-col-title {
+    margin-bottom: 18px;
+  }
+}

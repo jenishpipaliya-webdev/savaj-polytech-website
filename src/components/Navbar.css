@@ -13,81 +13,37 @@
 .navbar-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 10px 24px;
+  padding: 8px 24px; /* Reduced padding to keep header tight */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Brand Logo Layout (Larger Image + Bold Name) */
 /* Brand Container Alignment */
 .navbar-brand {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 12px;
   position: relative;
 }
 
-/* Fully Responsive SVG Logo */
+/* FIXED Full SVG Logo Styling */
 .brand-logo-svg {
-  /* Dynamic height: min 110px on mobile, scales smoothly to max 220px on desktop */
-  height: clamp(110px, 12vw, 220px); 
+  /* Clean proportional height - No Squeezing, No Overlap */
+  height: clamp(120px, 5vw, 68px); 
   width: auto;
   object-fit: contain;
 
-  /* Dynamic negative margins based on scale */
-  margin-top: clamp(-60px, -5vw, -70px);
-  margin-bottom: clamp(-60px, -5vw, -70px);
+  /* Negative margins completely removed to prevent overlapping hero image */
+  margin: 0;
+  padding: 2px 0;
 
   flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 
 .navbar-brand:hover .brand-logo-svg {
-  transform: scale(1.05);
-}
-
-/* Mobile & Tablet Specific Responsive Tweak */
-@media (max-width: 768px) {
-  .navbar-brand {
-    gap: 8px;
-  }
-
-  .brand-logo-svg {
-    /* Mobile screens par clean fit ke liye optimized height & margins */
-    height: 120px;
-    margin-top: -38px;
-    margin-bottom: -38px;
-  }
-
-  .brand-title {
-    font-size: 20px; /* Mobile par title readable aur balance rahega */
-  }
-}
-
-@media (max-width: 480px) {
-  .brand-logo-svg {
-    height: 100px;
-    margin-top: -30px;
-    margin-bottom: -30px;
-  }
-
-  .brand-title {
-    font-size: 18px;
-  }
-}
-
-.brand-title {
-  font-size: 26px; /* Slightly bigger text for better balance */
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  color: #0b3b60;
-  line-height: 1;
-}
-
-.brand-title-accent {
-  color: #0072ce;
+  transform: scale(1.03);
 }
 
 /* Desktop Nav Center */
@@ -164,7 +120,7 @@
   transform: translateX(3px);
 }
 
-/* Mobile Toggle & Menu */
+/* Mobile Toggle & Menu Drawer */
 .mobile-toggle {
   display: none;
   background: none;
@@ -212,7 +168,7 @@
   font-weight: 600;
 }
 
-/* Responsive Media Query */
+/* Responsive Media Queries */
 @media (max-width: 768px) {
   .desktop-nav {
     display: none;
@@ -223,7 +179,7 @@
   .mobile-menu {
     display: block;
   }
-  .brand-logo-img {
-    height: 48px; /* Responsive size for mobile screens */
+  .brand-logo-svg {
+    height: 48px; /* Clean mobile sizing */
   }
 }

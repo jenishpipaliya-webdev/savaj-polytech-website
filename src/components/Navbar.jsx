@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Menu, X } from 'lucide-react';
-import savajLogoSvg from '../assets/savajlogoblue.svg'; // SVG File Import
+import savajLogoSvg from '../assets/savajlogoorange5.svg'; // SVG File Import
 import './Navbar.css';
 
 export default function Navbar() {

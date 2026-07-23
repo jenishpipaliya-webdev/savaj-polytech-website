@@ -7,11 +7,9 @@ import './App.css';
 import About from './pages/About';
 import ProductsPage from './pages/ProductsPage';
 import ScrollToTop from './components/ScrollToTop';
+import ContactUsPage from'./pages/ContactUsPage';
+import Footer from './components/Footer';
 
-// Placeholders for future pages
-
-
-const Contact = () => <div style={{ paddingTop: '100px', textAlign: 'center' }}><h1>Contact Us Page</h1></div>;
 
 function App() {
   return (
@@ -25,8 +23,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<ProductsPage />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<ContactUsPage/>} />
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );
