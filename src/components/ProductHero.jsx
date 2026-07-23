@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 import MarqueeTicker from './MarqueeTicker';
 import './ProductHero.css';
 
-import bgImg1 from '../assets/floorsheet.jpeg';
-import bgImg2 from '../assets/Construction.jpeg';
-import bgImg3 from '../assets/packaging.jpeg';
-import bgImg4 from '../assets/multipurpose.jpeg';
-
 export default function ProductHero() {
-  const images = [bgImg1, bgImg2, bgImg3, bgImg4];
+  // Public folder background image paths (Vercel-proof)
+  const images = [
+    '/productpageimage/floorprotectionsheet1.jpg',
+    '/productpageimage/constructionprotectionsheet1.jpg',
+    '/productpageimage/industrialpackagingsheets1.jpg',
+    '/productpageimage/multipurposeplasticsheets1.jpg'
+  ];
+
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
   useEffect(() => {
@@ -35,7 +37,6 @@ export default function ProductHero() {
             style={{ backgroundImage: `url(${img})` }}
           />
         ))}
-        {/* Dark Gradient Overlay over Background Image */}
         <div className="product-hero-overlay"></div>
       </div>
 

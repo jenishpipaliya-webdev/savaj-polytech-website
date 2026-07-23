@@ -3,11 +3,11 @@ import ProductHero from "./ProductHero";
 import { ChevronDown, Phone, Layers } from "lucide-react";
 import "./Pageproduct.css";
 
-// Dynamic Local Asset Images Import Helper
+// Public folder absolute path loader (Works 100% everywhere: Vercel, Netlify, Hostinger)
 const getProductImages = (productKey) => [
-  new URL(`../assets/productpageimage/${productKey}1.jpg`, import.meta.url).href,
-  new URL(`../assets/productpageimage/${productKey}2.jpg`, import.meta.url).href,
-  new URL(`../assets/productpageimage/${productKey}3.jpg`, import.meta.url).href,
+  `/productpageimage/${productKey}1.jpg`,
+  `/productpageimage/${productKey}2.jpg`,
+  `/productpageimage/${productKey}3.jpg`,
 ];
 
 // Common Standard Colors
@@ -242,7 +242,7 @@ export default function Pageproduct() {
 
   return (
     <div>
-      {/* 1. HERO SECTION AT TOP */}
+      {/* Product Hero Section */}
       
 
       <section className="products-section">
