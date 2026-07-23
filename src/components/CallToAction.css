@@ -1,0 +1,178 @@
+/* CTA Section Setup */
+.cta-section {
+  width: 100%;
+  padding: 60px 24px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.cta-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Premium Gradient Banner Box */
+.cta-banner {
+  background: linear-gradient(135deg, #0b3b60 0%, #0072ce 100%);
+  border-radius: 24px;
+  padding: 48px 56px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 20px 45px rgba(0, 114, 206, 0.22);
+  position: relative;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+/* Continuous Animated Ambient Glows */
+.cta-ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+  opacity: 0.35;
+  animation: pulseGlow 6s ease-in-out infinite alternate;
+}
+
+.blob-1 {
+  top: -40%;
+  right: -10%;
+  width: 320px;
+  height: 320px;
+  background: #38bdf8;
+}
+
+.blob-2 {
+  bottom: -40%;
+  left: 10%;
+  width: 280px;
+  height: 280px;
+  background: #ffffff;
+  animation-delay: 3s;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.9) translate(0, 0); opacity: 0.25; }
+  100% { transform: scale(1.15) translate(-10px, 10px); opacity: 0.45; }
+}
+
+.cta-text-content {
+  max-width: 700px;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #38bdf8;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.cta-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.cta-description {
+  font-size: 15px;
+  color: #e0f2fe;
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Button & Hover Effects */
+.cta-action {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background-color: #ffffff;
+  color: #0b3b60;
+  border: 2px solid #ffffff;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Light Streak Shimmer Animation on Button */
+.cta-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: left 0.75s ease;
+}
+
+.cta-btn:hover::after {
+  left: 150%;
+}
+
+.cta-btn-arrow {
+  width: 32px;
+  height: 32px;
+  background-color: #0b3b60;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cta-btn:hover {
+  background-color: transparent;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.cta-btn:hover .cta-btn-arrow {
+  background-color: #ffffff;
+  color: #0b3b60;
+  transform: translateX(5px) scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 28px;
+  }
+
+  .cta-description {
+    margin-bottom: 10px;
+  }
+}

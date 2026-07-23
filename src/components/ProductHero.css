@@ -1,0 +1,185 @@
+/* Outer Section Wrapper */
+.product-hero-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+/* 1. HERO IMAGE BANNER */
+.product-hero-bg-wrapper {
+  position: relative;
+  width: 100%;
+  height: clamp(600px, 82vh, 760px);
+  background-color: #0b3b60;
+  overflow: hidden;
+}
+
+.product-hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1.2s ease-in-out, transform 6s ease-out;
+}
+
+.product-hero-bg-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.product-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 59, 96, 0.55) 0%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  z-index: 2;
+}
+
+/* 2. MARQUEE TICKER LAYER */
+.product-bottom-ticker-layer {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 10;
+}
+
+/* 3. ABSOLUTE CONTAINER - LOCKS CARD BOTTOM TO MARQUEE TICKER BOTTOM */
+.product-hero-container {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* FLOATING CARD */
+.product-hero-card {
+  pointer-events: auto;
+  background: linear-gradient(145deg, #0b3b60 0%, #0072ce 100%);
+  color: #ffffff;
+  padding: 64px 54px;
+  border-radius: 28px 28px 0 28px;
+  max-width: 620px;
+  box-shadow: 0 28px 55px rgba(11, 59, 96, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  position: relative;
+  backdrop-filter: blur(12px);
+}
+
+/* Card Header Line & Tag */
+.product-card-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.product-card-line {
+  width: 60px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.product-company-tag {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e0f2fe;
+  letter-spacing: 0.5px;
+}
+
+/* Main Title "PRODUCTS" */
+.product-card-title {
+  font-size: clamp(3.2rem, 5.5vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  margin: 0 0 20px 0;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* Subtitle Description */
+.product-card-desc {
+  font-size: 16.5px;
+  line-height: 1.68;
+  color: #f0f9ff;
+  margin: 0 0 36px 0;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+/* Breadcrumb Navigation Pill */
+.product-breadcrumb-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 11px 22px;
+  border-radius: 14px;
+  width: fit-content;
+}
+
+.breadcrumb-home-link {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-home-link:hover {
+  color: #38bdf8;
+}
+
+.breadcrumb-arrow {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumb-current {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Responsive Overrides */
+@media (max-width: 992px) {
+  .product-hero-bg-wrapper {
+    height: 520px;
+  }
+
+  .product-hero-card {
+    max-width: 520px;
+    padding: 44px 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-hero-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .product-hero-container {
+    position: relative;
+    inset: auto;
+    margin-top: -60px;
+  }
+
+  .product-hero-card {
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 32px 24px;
+  }
+}

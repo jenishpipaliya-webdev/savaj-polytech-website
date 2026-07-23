@@ -1,0 +1,215 @@
+.about-overview-section {
+  width: 100%;
+  padding: 100px 24px;
+  background-color: #ffffff;
+  color: #0f172a;
+  overflow: hidden;
+}
+
+.about-overview-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* LEFT COLUMN: OVERLAPPING COLLAGE */
+.about-img-collage-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 80px;
+  padding-right: 40px;
+}
+
+/* Main Background Image Frame */
+.about-main-img-frame {
+  width: 82%;
+  height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(11, 59, 96, 0.12);
+  border: 1px solid #e2e8f0;
+  will-change: transform, opacity;
+}
+
+.about-collage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-main-img-frame:hover .about-collage-img {
+  transform: scale(1.06);
+}
+
+/* Overlapping Floating Image Frame */
+.about-overlay-img-frame {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 62%;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.22);
+  border: 6px solid #ffffff;
+  background-color: #ffffff;
+  will-change: transform, opacity;
+  animation: floatImage 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatImage {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+/* Badge Overlay */
+.about-overlay-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(11, 59, 96, 0.92);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.badge-number {
+  font-size: 20px;
+  font-weight: 900;
+  color: #38bdf8;
+  line-height: 1;
+}
+
+.badge-text {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* RIGHT COLUMN: TYPOGRAPHY */
+.about-overview-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-overview-badge {
+  color: #0072ce;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  background: rgba(0, 114, 206, 0.08);
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 114, 206, 0.2);
+  margin-bottom: 16px;
+}
+
+.about-overview-heading {
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 900;
+  color: #0b3b60;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.about-overview-heading .highlight {
+  color: #0072ce;
+}
+
+.about-heading-line {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0072ce, #38bdf8);
+  border-radius: 2px;
+  margin-bottom: 24px;
+  will-change: transform;
+}
+
+.about-paragraph {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0 0 16px 0;
+  font-weight: 400;
+}
+
+.about-paragraph.highlight-lead {
+  font-size: 16.5px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+/* Feature Dots Pulse */
+.about-features-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 20px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.feature-mini-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0b3b60;
+}
+
+.feature-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #0072ce;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 0 rgba(0, 114, 206, 0.4);
+  animation: dotPulse 2s infinite;
+}
+
+@keyframes dotPulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 114, 206, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(0, 114, 206, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 114, 206, 0); }
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .about-overview-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-img-collage-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-main-img-frame {
+    width: 90%;
+    height: 340px;
+  }
+
+  .about-overlay-img-frame {
+    width: 75%;
+    height: 220px;
+  }
+
+  .about-features-mini-grid {
+    grid-template-columns: 1fr;
+  }
+}

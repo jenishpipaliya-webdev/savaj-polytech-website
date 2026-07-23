@@ -1,0 +1,183 @@
+.about-section {
+  width: 100%;
+  padding: 90px 0; /* Padding up-down rakhne ke liye, side me nahi */
+  background-color: #ffffff;
+}
+
+.about-container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px; /* Screen borders se clean 24px gap */
+  box-sizing: border-box;
+}
+
+/* Top Split Layout */
+.about-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.about-tagline {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #0072ce;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.about-main-title {
+  font-size: 40px;
+  font-weight: 900;
+  color: #0b3b60;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.highlight-text {
+  color: #0072ce;
+}
+
+.about-paragraph {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 18px;
+}
+
+/* Right Image Styling */
+.about-image-wrapper {
+  width: 100%;
+  height: 100%;
+  max-height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(11, 59, 96, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-image-wrapper:hover .about-image {
+  transform: scale(1.03);
+}
+
+/* Feature Cards 3-Column Grid */
+.about-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 50px;
+}
+
+.about-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 114, 206, 0.08);
+  border-color: #cbd5e1;
+}
+
+.card-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  background-color: #003366; /* Deep Blue Accent */
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0b3b60;
+  margin-bottom: 10px;
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* Bottom CTA Button Wrapper */
+.about-cta-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.about-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #0072ce;
+  color: #ffffff;
+  border: 2px solid #0072ce;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-cta-btn .btn-arrow-circle {
+  width: 28px;
+  height: 28px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0072ce;
+  transition: all 0.3s ease;
+}
+
+.about-cta-btn:hover {
+  background-color: transparent;
+  color: #0072ce;
+}
+
+.about-cta-btn:hover .btn-arrow-circle {
+  background-color: #0072ce;
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 992px) {
+  .about-top-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-main-title {
+    font-size: 32px;
+  }
+}

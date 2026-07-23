@@ -1,0 +1,237 @@
+/* Base Section */
+.portfolio-section {
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0 80px 0;
+}
+
+/* Gray Divider Line */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin-bottom: 50px;
+}
+
+.portfolio-container {
+  width: 100%;
+}
+
+/* Header Styling */
+.section-header {
+  max-width: 1280px;
+  margin: 0 auto 45px auto;
+  padding: 0 24px;
+  text-align: left;
+}
+
+/* Badge Styling */
+.section-subtitle-badge {
+  color: #0072ce;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  display: inline-block;
+  background: rgba(0, 114, 206, 0.08);
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 114, 206, 0.2);
+  margin-bottom: 1rem;
+}
+
+/* Savaj Polytech Blue Color-Shift Title */
+.section-title-animated {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin: 0 0 0.8rem 0;
+  background: linear-gradient(90deg, #0b3b60, #0072ce, #0284c7, #0b3b60);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorShift 7s ease infinite;
+}
+
+@keyframes colorShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0;
+}
+
+/* Carousel Outer Box */
+.rg-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  padding: 10px 0;
+}
+
+.portfolio-section::before,
+.portfolio-section::after {
+  content: "";
+  position: absolute;
+  top: 180px;
+  bottom: 40px;
+  width: 100px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.portfolio-section::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff 15%, rgba(255, 255, 255, 0));
+}
+
+.portfolio-section::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff 15%, rgba(255, 255, 255, 0));
+}
+
+.rg-card-track {
+  display: flex;
+  gap: 32px;
+  will-change: transform;
+}
+
+/* Product Card Styling */
+.rg-card {
+  flex: 0 0 380px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(11, 59, 96, 0.12);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.rg-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 22px 45px rgba(0, 114, 206, 0.25);
+  z-index: 10;
+}
+
+/* Card Top Image Container */
+.rg-top-container {
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+
+.rg-image-frame {
+  width: 88%;
+  height: 100%;
+  overflow: hidden;
+  border-bottom-right-radius: 12px;
+}
+
+.rg-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rg-card:hover .rg-card-img {
+  transform: scale(1.08);
+}
+
+/* Modern Geometric Slash Accent Lines */
+.rg-slash-container {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 8px;
+  z-index: 15;
+  transition: transform 0.4s ease;
+}
+
+.rg-card:hover .rg-slash-container {
+  transform: translate(-50%, -54%) scale(1.05);
+}
+
+.rg-slash-line {
+  transform: skewX(-18deg);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.rg-slash-line.line-long {
+  width: 16px;
+  height: 80px;
+}
+
+.rg-slash-line.line-short {
+  width: 16px;
+  height: 52px;
+  align-self: flex-end;
+}
+
+/* Card Bottom Content */
+.rg-bottom-content {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 28px 24px 28px;
+  text-align: center;
+}
+
+.rg-brand-header {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rg-brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin: 0 0 6px 0;
+  line-height: 1.25;
+}
+
+.rg-product-line {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  opacity: 0.85;
+}
+
+.rg-card-description {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.9;
+  max-width: 320px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .rg-card {
+    flex: 0 0 310px;
+    height: 540px;
+  }
+}

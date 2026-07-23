@@ -1,0 +1,66 @@
+.nxt-ticker-wrapper {
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1.2rem 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.nxt-ticker-container {
+  overflow: hidden; 
+  width: 100%;
+  display: flex;
+}
+
+.nxt-ticker-track {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  animation: infiniteLinearScroll 28s linear infinite;
+  will-change: transform;
+}
+
+/* Hover par scroll pause hoga */
+.nxt-ticker-container:hover .nxt-ticker-track {
+  animation-play-state: paused;
+}
+
+.nxt-ticker-item-node {
+  display: flex;
+  align-items: center;
+}
+
+.nxt-ticker-text {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #0b3b60; /* Deep Brand Blue */
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.nxt-ticker-item-node:hover .nxt-ticker-text {
+  color: #0072ce; /* Bright Brand Accent Blue */
+}
+
+.nxt-ticker-separator {
+  color: #0072ce;
+  font-size: 14px;
+  padding: 0 2rem;
+  user-select: none;
+}
+
+/* Zero-stutter continuous scrolling animation */
+@keyframes infiniteLinearScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0); 
+  }
+}

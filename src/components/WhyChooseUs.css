@@ -1,0 +1,290 @@
+.why-section {
+  width: 100%;
+  padding: 90px 24px;
+  background-color: #f8fafc;
+  color: #0f172a;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header */
+.why-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 60px auto;
+}
+
+.why-badge {
+  color: #0072ce;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  display: inline-block;
+  background: rgba(0, 114, 206, 0.08);
+  padding: 6px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 114, 206, 0.2);
+  margin-bottom: 16px;
+}
+
+.why-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: #0b3b60;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.why-title .highlight-text {
+  color: #0072ce;
+}
+
+.why-tagline {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #64748b;
+  font-weight: 400;
+}
+
+/* Outer Grid Canvas Wrapper */
+.why-canvas-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* SVG Connector Layer */
+.why-flowchart-svg-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.why-base-path {
+  transition: opacity 0.3s ease;
+}
+
+.why-pulse-path {
+  opacity: 0;
+  transition: opacity 0.35s ease, stroke-dashoffset 0.1s linear;
+  filter: drop-shadow(0 0 8px rgba(0, 114, 206, 0.9));
+  pointer-events: none;
+}
+
+.why-pulse-path.is-hover-neon {
+  opacity: 1 !important;
+}
+
+/* Grid Matrix with 3D Perspective */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px 40px;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+  perspective: 1200px; /* Essential for 3D Tilt */
+}
+
+/* CARD STYLING WITH GLOW & 3D TILT */
+.why-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+/* GLOWING CURSOR SPOTLIGHT EFFECT */
+.why-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    380px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(0, 114, 206, 0.12),
+    transparent 65%
+  );
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.why-card:hover::before {
+  opacity: 1;
+}
+
+.why-card:hover {
+  border-color: #0072ce;
+  box-shadow: 0 20px 40px rgba(0, 114, 206, 0.18);
+}
+
+/* Elevate Content Inside Card (Parallax Depth) */
+.why-card-top,
+.why-card-title,
+.why-card-desc,
+.why-card-bar {
+  position: relative;
+  z-index: 2;
+  transform: translateZ(20px); /* Lifts elements off card surface */
+  transition: transform 0.3s ease;
+}
+
+.why-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.why-icon-wrapper {
+  width: 54px;
+  height: 54px;
+  background-color: #0b3b60;
+  color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+}
+
+.why-card:hover .why-icon-wrapper {
+  background-color: #0072ce;
+  transform: scale(1.1) rotate(-4deg);
+}
+
+.why-number {
+  font-size: 28px;
+  font-weight: 900;
+  color: #cbd5e1;
+  letter-spacing: -1px;
+  transition: color 0.3s ease;
+}
+
+.why-card:hover .why-number {
+  color: #0072ce;
+}
+
+.why-card-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #0b3b60;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.why-card:hover .why-card-title {
+  color: #0072ce;
+}
+
+.why-card-desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+.why-card-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #0072ce;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.why-card:hover .why-card-bar {
+  transform: scaleX(1);
+}
+
+/* Bottom CTA Banner */
+.why-cta-banner {
+  background: linear-gradient(135deg, #0b3b60 0%, #0072ce 100%);
+  border-radius: 20px;
+  padding: 40px 48px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  box-shadow: 0 15px 30px rgba(0, 114, 206, 0.25);
+  position: relative;
+  z-index: 3;
+}
+
+.why-cta-text h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.why-cta-text p {
+  font-size: 15px;
+  color: #e0f2fe;
+  margin: 0;
+}
+
+.why-cta-button {
+  background-color: #ffffff;
+  color: #0b3b60;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.why-cta-button:hover {
+  background-color: #0b3b60;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .why-flowchart-svg-canvas {
+    display: none !important;
+  }
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .why-card {
+    transform: none !important; /* Disable 3D tilt on mobile/tablets for performance */
+  }
+}
+
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+  .why-cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+}

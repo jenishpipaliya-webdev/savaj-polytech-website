@@ -1,0 +1,229 @@
+/* Header Base Setup */
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand Logo Layout (Larger Image + Bold Name) */
+/* Brand Container Alignment */
+.navbar-brand {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+/* Fully Responsive SVG Logo */
+.brand-logo-svg {
+  /* Dynamic height: min 110px on mobile, scales smoothly to max 220px on desktop */
+  height: clamp(110px, 12vw, 220px); 
+  width: auto;
+  object-fit: contain;
+
+  /* Dynamic negative margins based on scale */
+  margin-top: clamp(-60px, -5vw, -70px);
+  margin-bottom: clamp(-60px, -5vw, -70px);
+
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .brand-logo-svg {
+  transform: scale(1.05);
+}
+
+/* Mobile & Tablet Specific Responsive Tweak */
+@media (max-width: 768px) {
+  .navbar-brand {
+    gap: 8px;
+  }
+
+  .brand-logo-svg {
+    /* Mobile screens par clean fit ke liye optimized height & margins */
+    height: 120px;
+    margin-top: -38px;
+    margin-bottom: -38px;
+  }
+
+  .brand-title {
+    font-size: 20px; /* Mobile par title readable aur balance rahega */
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo-svg {
+    height: 100px;
+    margin-top: -30px;
+    margin-bottom: -30px;
+  }
+
+  .brand-title {
+    font-size: 18px;
+  }
+}
+
+.brand-title {
+  font-size: 26px; /* Slightly bigger text for better balance */
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: #0b3b60;
+  line-height: 1;
+}
+
+.brand-title-accent {
+  color: #0072ce;
+}
+
+/* Desktop Nav Center */
+.desktop-nav {
+  display: block;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #334155;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #0072ce;
+}
+
+/* Contact Button */
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #0072ce;
+  color: #ffffff;
+  border: 2px solid #0072ce;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-arrow-circle {
+  width: 28px;
+  height: 28px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0072ce;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: transparent;
+  color: #0072ce;
+}
+
+.contact-btn:hover .btn-arrow-circle {
+  background-color: #0072ce;
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+/* Mobile Toggle & Menu */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  background-color: #ffffff;
+  border-top: 1px solid #f1f5f9;
+  padding: 20px 24px;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-nav-link {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  display: block;
+}
+
+.mobile-nav-link.active {
+  color: #0072ce;
+}
+
+.mobile-contact-btn {
+  display: block;
+  text-align: center;
+  background-color: #0072ce;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Responsive Media Query */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .brand-logo-img {
+    height: 48px; /* Responsive size for mobile screens */
+  }
+}

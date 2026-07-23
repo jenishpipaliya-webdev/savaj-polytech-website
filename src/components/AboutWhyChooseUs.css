@@ -1,0 +1,301 @@
+/* Container Setup */
+.about-why-choose-section {
+  position: relative;
+  padding: 110px 24px;
+  background-color: #f8fafc;
+  overflow: hidden;
+}
+
+.about-why-choose-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .about-why-choose-container {
+    grid-template-columns: 7.5fr 4.5fr;
+  }
+}
+
+/* ==========================================
+   BACKGROUND GEOMETRIC ELEMENTS & ANIMATIONS
+   ========================================== */
+
+/* 1. Sunburst Ring (Right Floating Rotator) */
+.bg-sunburst-ring {
+  position: absolute;
+  top: 10%;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border: 2px dashed rgba(2, 132, 199, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: rotateSunburst 25s linear infinite;
+  z-index: 1;
+}
+
+.bg-sunburst-ring::after {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border: 1px dotted rgba(29, 78, 216, 0.2);
+  border-radius: 50%;
+}
+
+@keyframes rotateSunburst {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 2. Floating Polymer Polyhedron / 3D Shape */
+.bg-polyhedron {
+  position: absolute;
+  bottom: 12%;
+  left: 4%;
+  width: 70px;
+  height: 70px;
+  border: 2px solid rgba(2, 132, 199, 0.2);
+  border-radius: 18px;
+  transform: rotate(45deg);
+  pointer-events: none;
+  animation: floatGeometric 6s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes floatGeometric {
+  0% { transform: rotate(45deg) translateY(0px) scale(1); }
+  100% { transform: rotate(65deg) translateY(-20px) scale(1.08); }
+}
+
+/* 3. Glowing Ambient Spheres */
+.about-bg-glow-1 {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.15) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.about-bg-glow-2 {
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* 4. Dot Grid Pattern */
+.about-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* ==========================================
+   CONTENT & TYPOGRAPHY
+   ========================================== */
+
+.about-section-subtitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #0284c7;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.about-section-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 36px;
+}
+
+.about-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.about-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  transition: transform 0.3s ease;
+}
+
+.about-point-item:hover {
+  transform: translateX(6px);
+}
+
+.about-check-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #0284c7;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
+}
+
+.about-point-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.about-point-title {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 1.1rem;
+}
+
+/* Right Column Layout & Call Box */
+.about-right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .about-right-column {
+    align-items: flex-end;
+  }
+}
+
+.about-phone-card {
+  width: 100%;
+  max-width: 360px;
+  background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 24px 28px;
+  box-shadow: 0 12px 30px -8px rgba(2, 132, 199, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.about-phone-icon-box {
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-phone-icon {
+  width: 28px;
+  height: 28px;
+  stroke: #ffffff;
+}
+
+.about-phone-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #e0f2fe;
+  margin-bottom: 2px;
+}
+
+.about-phone-number {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+/* Perfectly Width-Aligned Button + Hover Effects */
+.about-cta-wrapper {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-navbar-cta {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px 8px 24px;
+  background-color: #0284c7;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-sizing: border-box;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-navbar-cta:hover {
+  background-color: #0369a1;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.45);
+}
+
+.about-cta-arrow {
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  color: #0284c7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: transform 0.4s ease;
+}
+
+.about-navbar-cta:hover .about-cta-arrow {
+  transform: translateX(4px) rotate(-45deg);
+}
+
+/* ==========================================
+   RE-TRIGGERABLE ANIMATION CLASSES
+   ========================================== */
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

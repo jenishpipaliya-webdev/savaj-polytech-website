@@ -1,0 +1,182 @@
+/* Section Setup */
+.values-section {
+  position: relative;
+  width: 100%;
+  padding: 80px 24px 100px 24px;
+  background-color: #f8fafc;
+  overflow: hidden;
+}
+
+/* BACKGROUND VECTOR ELEMENTS */
+.bg-element {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Left Sunburst */
+.sunburst-burst {
+  top: 50%;
+  left: -80px;
+  transform: translateY(-50%);
+  width: 320px;
+  height: 320px;
+  opacity: 0.7;
+}
+
+/* Right Top Circle */
+.right-circle-ring {
+  top: 40px;
+  right: 6%;
+}
+
+/* Right Floating Crosses */
+.right-cross-marks {
+  bottom: 60px;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #0072ce;
+  opacity: 0.2;
+}
+
+/* Right Wavy Waves */
+.right-wavy-pattern {
+  top: 45%;
+  right: -20px;
+  transform: translateY(-50%);
+}
+
+.values-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* 3 Column Grid Matrix */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+/* CARD STYLING */
+.value-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(11, 59, 96, 0.06);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 30px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 22px 45px rgba(0, 114, 206, 0.18);
+  border-color: rgba(0, 114, 206, 0.35);
+}
+
+/* Image Frame */
+.value-img-frame {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+}
+
+.value-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.value-card:hover .value-card-img {
+  transform: scale(1.08);
+}
+
+/* Body Content */
+.value-card-body {
+  padding: 32px 28px 20px 28px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.value-card-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: #0b3b60;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+
+.value-card:hover .value-card-title {
+  color: #0072ce;
+}
+
+.value-card-desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Arrow Button Footer */
+.value-card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.value-arrow-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0b3b60 0%, #0072ce 100%);
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 114, 206, 0.3);
+  transition: all 0.35s ease;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover .value-arrow-btn {
+  background: linear-gradient(135deg, #0072ce 0%, #38bdf8 100%);
+  transform: scale(1.1);
+  box-shadow: 0 8px 22px rgba(0, 114, 206, 0.45);
+}
+
+.value-card:hover .arrow-icon {
+  transform: translateX(3px);
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}

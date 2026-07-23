@@ -1,0 +1,196 @@
+/* Hero Parent Section Setup */
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px; /* Offset for Fixed Navbar */
+  overflow: hidden;
+  background-color: #0b1d33;
+}
+
+/* Background Carousel Slides */
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1.2s ease-in-out, transform 6s ease-out;
+  z-index: 1;
+}
+
+.hero-bg-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Gradient Overlay for blue tone depth */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(11, 29, 51, 0.88) 0%, 
+    rgba(11, 29, 51, 0.65) 50%, 
+    rgba(11, 29, 51, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+/* Layout Wrapper */
+.hero-content-wrapper {
+  position: relative;
+  z-index: 3;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Left Hero Text Section */
+.hero-left-content {
+  max-width: 680px;
+  color: #ffffff;
+}
+
+.hero-headline {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-text {
+  color: #0088ff;
+}
+
+.hero-subheadline {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+
+/* CTA Button Interaction (RENOL Style) */
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #0072ce;
+  color: #ffffff;
+  border: 2px solid #0072ce;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 25px -5px rgba(0, 114, 206, 0.4);
+}
+
+.hero-cta-btn .btn-arrow-circle {
+  width: 34px;
+  height: 34px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0072ce;
+  transition: all 0.3s ease;
+}
+
+.hero-cta-btn:hover {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.hero-cta-btn:hover .btn-arrow-circle {
+  background-color: #0072ce;
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* Right Side Stats Card (Replica of Video Block) */
+.hero-stats-card {
+  background-color: #0072ce; /* Primary Theme Blue */
+  color: #ffffff;
+  padding: 40px 36px;
+  border-radius: 20px 20px 0 0; /* Modern Bottom-Docked Card Look */
+  width: 380px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.stats-tag {
+  position: absolute;
+  top: -16px;
+  right: 28px;
+  background-color: #ffffff;
+  color: #0b3b60;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+.stat-item {
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 16px;
+}
+
+.stat-item:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.stat-number {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1px;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #e0f2fe;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Responsive Styles for Mobile / Tablet */
+@media (max-width: 992px) {
+  .hero-content-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+
+  .hero-headline {
+    font-size: 38px;
+  }
+
+  .hero-stats-card {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 16px;
+  }
+}

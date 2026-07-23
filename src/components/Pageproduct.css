@@ -1,0 +1,446 @@
+/* Section Container & Layout */
+.products-section {
+  position: relative;
+  padding: 90px 24px;
+  background-color: #f8fafc;
+  overflow: hidden;
+}
+
+.products-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .products-container {
+    grid-template-columns: 8fr 4fr;
+  }
+}
+
+/* ==========================================
+   BACKGROUND GEOMETRIC ELEMENTS
+   ========================================== */
+
+.bg-sunburst-ring {
+  position: absolute;
+  top: 5%;
+  right: -80px;
+  width: 340px;
+  height: 340px;
+  border: 2px dashed rgba(2, 132, 199, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: rotateSunburst 30s linear infinite;
+  z-index: 1;
+}
+
+.bg-sunburst-ring::after {
+  content: '';
+  position: absolute;
+  inset: 24px;
+  border: 1px dotted rgba(29, 78, 216, 0.2);
+  border-radius: 50%;
+}
+
+@keyframes rotateSunburst {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.bg-polyhedron {
+  position: absolute;
+  bottom: 8%;
+  left: 3%;
+  width: 75px;
+  height: 75px;
+  border: 2px solid rgba(2, 132, 199, 0.2);
+  border-radius: 18px;
+  transform: rotate(45deg);
+  pointer-events: none;
+  animation: floatGeometric 6s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes floatGeometric {
+  0% { transform: rotate(45deg) translateY(0px) scale(1); }
+  100% { transform: rotate(65deg) translateY(-22px) scale(1.08); }
+}
+
+.products-bg-glow-1 {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.12) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.products-bg-glow-2 {
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.12) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.products-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* ==========================================
+   LEFT COLUMN: DYNAMIC CONTENT AREA
+   ========================================== */
+
+.product-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Switch Animation Class */
+.product-details-content.fade-switch {
+  opacity: 0.2;
+  transform: translateY(10px);
+}
+
+.product-main-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.product-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+/* Auto-Play Image Carousel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background-color: #e2e8f0;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.carousel-btn:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev { left: 16px; }
+.carousel-btn.next { right: 16px; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #0284c7;
+  width: 26px;
+  border-radius: 12px;
+}
+
+/* SPECIFICATION TABLE (Striped Design) */
+.spec-section-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.section-title-underline {
+  width: 120px;
+  height: 3px;
+  background-color: #0284c7;
+  margin-bottom: 24px;
+  border-radius: 2px;
+}
+
+.specs-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: #ffffff;
+}
+
+.specs-table th {
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  border-bottom: 2px solid #0f172a;
+}
+
+.specs-table td {
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.specs-table tbody tr:nth-child(even) {
+  background-color: #e2e8f0;
+}
+
+.specs-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Colors Section */
+.colors-section-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.colors-list {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.color-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background-color: #ffffff;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.color-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================
+   RIGHT SIDEBAR: PRODUCT BUTTONS
+   ========================================== */
+
+.product-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.product-nav-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background-color: #0284c7;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.15);
+  text-align: left;
+}
+
+.product-nav-btn:hover {
+  background-color: #0369a1;
+  transform: translateX(-4px);
+}
+
+.product-nav-btn.active {
+  background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%);
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.35);
+  border-left: 6px solid #38bdf8;
+}
+
+.btn-arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.product-nav-btn.active .btn-arrow {
+  transform: translateX(4px);
+}
+
+.sidebar-contact-box {
+  margin-top: 24px;
+  padding: 24px;
+  background: linear-gradient(135deg, #0284c7 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.sidebar-contact-box h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.sidebar-contact-box p {
+  font-size: 0.875rem;
+  color: #e0f2fe;
+  margin-bottom: 16px;
+}
+
+.sidebar-phone-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #0284c7;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-phone-btn:hover {
+  transform: scale(1.05);
+}
+
+/* FAQ Accordion Styling */
+.faq-section {
+  margin-top: 10px;
+}
+
+.faq-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.faq-item:hover {
+  border-color: #0284c7;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.1);
+}
+
+.faq-item.active {
+  border-color: #0284c7;
+  background-color: #f0f9ff;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.faq-icon {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0284c7;
+  line-height: 1;
+}
+
+.faq-answer {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+  animation: fadeInFaq 0.3s ease-out;
+}
+
+@keyframes fadeInFaq {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
