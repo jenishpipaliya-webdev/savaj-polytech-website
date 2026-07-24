@@ -312,8 +312,7 @@ export default function Pageproduct() {
   return (
     <div>
       {/* Product Hero Section */}
-      <ProductHero />
-
+      
       <section className="products-section">
         {/* Background Shapes */}
         <div className="bg-sunburst-ring" />
