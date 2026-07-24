@@ -3,60 +3,60 @@ import ProductHero from "./ProductHero";
 import { Layers } from "lucide-react";
 import "./Pageproduct.css";
 
-// 1. FLOOR PROTECTION SHEET
-import fps1 from "../assets/floorprotectionsheet1.jpg";
-import fps2 from "../assets/floorprotectionsheet2.jpg";
-import fps3 from "../assets/floorprotectionsheet3.jpg";
+// 1. FLOOR PROTECTION SHEET (.webp)
+import fps1 from "../assets/floorprotectionsheet1.webp";
+import fps2 from "../assets/floorprotectionsheet2.webp";
+import fps3 from "../assets/floorprotectionsheet3.webp";
 
-// 2. CONSTRUCTION PROTECTION SHEET
-import cps1 from "../assets/constructionprotectionsheet1.jpg";
-import cps2 from "../assets/constructionprotectionsheet2.jpg";
-import cps3 from "../assets/constructionprotectionsheet3.jpg";
+// 2. CONSTRUCTION PROTECTION SHEET (.webp)
+import cps1 from "../assets/constructionprotectionsheet1.webp";
+import cps2 from "../assets/constructionprotectionsheet2.webp";
+import cps3 from "../assets/constructionprotectionsheet3.webp";
 
-// 3. INDUSTRIAL PACKAGING SHEETS
-import ips1 from "../assets/industrialpackagingsheets1.jpg";
-import ips2 from "../assets/industrialpackagingsheets2.jpg";
-import ips3 from "../assets/industrialpackagingsheets3.jpg";
+// 3. INDUSTRIAL PACKAGING SHEETS (.webp)
+import ips1 from "../assets/industrialpackagingsheets1.webp";
+import ips2 from "../assets/industrialpackagingsheets2.webp";
+import ips3 from "../assets/industrialpackagingsheets3.webp";
 
-// 4. PP SEPARATOR SHEETS
-import pps1 from "../assets/ppseparatorsheets1.jpg";
-import pps2 from "../assets/ppseparatorsheets2.jpg";
-import pps3 from "../assets/ppseparatorsheets3.jpg";
+// 4. PP SEPARATOR SHEETS (.webp)
+import pps1 from "../assets/ppseparatorsheets1.webp";
+import pps2 from "../assets/ppseparatorsheets2.webp";
+import pps3 from "../assets/ppseparatorsheets3.webp";
 
-// 5. STORAGE ORGANIZING SHEETS
-import sos1 from "../assets/storageorganizingsheets1.jpg";
-import sos2 from "../assets/storageorganizingsheets2.jpg";
-import sos3 from "../assets/storageorganizingsheets3.jpg";
+// 5. STORAGE ORGANIZING SHEETS (.webp)
+import sos1 from "../assets/storageorganizingsheets1.webp";
+import sos2 from "../assets/storageorganizingsheets2.webp";
+import sos3 from "../assets/storageorganizingsheets3.webp";
 
-// 6. ADVERTISING DISPLAY SHEETS
-import ads1 from "../assets/advertisingdisplaysheets1.jpg";
-import ads2 from "../assets/advertisingdisplaysheets2.jpg";
-import ads3 from "../assets/advertisingdisplaysheets3.jpg";
+// 6. ADVERTISING DISPLAY SHEETS (.webp)
+import ads1 from "../assets/advertisingdisplaysheets1.webp";
+import ads2 from "../assets/advertisingdisplaysheets2.webp";
+import ads3 from "../assets/advertisingdisplaysheets3.webp";
 
-// 7. SIGNAGE BOARDS
-import sb1 from "../assets/signageboards1.jpg";
-import sb2 from "../assets/signageboards2.jpg";
-import sb3 from "../assets/signageboards3.jpg";
+// 7. SIGNAGE BOARDS (.webp)
+import sb1 from "../assets/signageboards1.webp";
+import sb2 from "../assets/signageboards2.webp";
+import sb3 from "../assets/signageboards3.webp";
 
-// 8. MULTIPURPOSE PLASTIC SHEETS
-import mps1 from "../assets/multipurposeplasticsheets1.jpg";
-import mps2 from "../assets/multipurposeplasticsheets2.jpg";
-import mps3 from "../assets/multipurposeplasticsheets3.jpg";
+// 8. MULTIPURPOSE PLASTIC SHEETS (.webp)
+import mps1 from "../assets/multipurposeplasticsheets1.webp";
+import mps2 from "../assets/multipurposeplasticsheets2.webp";
+import mps3 from "../assets/multipurposeplasticsheets3.webp";
 
-// 9. SUNPACK SHEETS
-import sps1 from "../assets/sunpacksheets1.jpg";
-import sps2 from "../assets/sunpacksheets2.jpg";
-import sps3 from "../assets/sunpacksheets3.jpg";
+// 9. SUNPACK SHEETS (.webp)
+import sps1 from "../assets/sunpacksheets1.webp";
+import sps2 from "../assets/sunpacksheets2.webp";
+import sps3 from "../assets/sunpacksheets3.webp";
 
-// 10. FLUTE SHEET BOARD
-import fsb1 from "../assets/flutesheetboard1.jpg";
-import fsb2 from "../assets/flutesheetboard2.jpg";
-import fsb3 from "../assets/flutesheetboard3.jpg";
+// 10. FLUTE SHEET BOARD (.webp)
+import fsb1 from "../assets/flutesheetboard1.webp";
+import fsb2 from "../assets/flutesheetboard2.webp";
+import fsb3 from "../assets/flutesheetboard3.webp";
 
-// 11. PP CORRUGATED EDGE PROTECTORS
-import ep1 from "../assets/ppcorrugatededgeprotectors1.jpg";
-import ep2 from "../assets/ppcorrugatededgeprotectors2.jpg";
-import ep3 from "../assets/ppcorrugatededgeprotectors3.jpg";
+// 11. PP CORRUGATED EDGE PROTECTORS (.webp)
+import ep1 from "../assets/ppcorrugatededgeprotectors1.webp";
+import ep2 from "../assets/ppcorrugatededgeprotectors2.webp";
+import ep3 from "../assets/ppcorrugatededgeprotectors3.webp";
 
 // Direct Explicit Image Map
 const imageStore = {
@@ -268,6 +268,18 @@ export default function Pageproduct() {
   const [isFading, setIsFading] = useState(false);
   const [activeFaq, setActiveFaq] = useState(null);
 
+  // Preload Images for Instant Zero-Delay Switch
+  useEffect(() => {
+    if (selectedProduct && selectedProduct.images) {
+      selectedProduct.images.forEach((imgSrc) => {
+        if (imgSrc) {
+          const img = new Image();
+          img.src = imgSrc;
+        }
+      });
+    }
+  }, [selectedProduct]);
+
   // Auto Carousel Image Transition
   useEffect(() => {
     const interval = setInterval(() => {
@@ -313,6 +325,7 @@ export default function Pageproduct() {
     <div>
       {/* Product Hero Section */}
       
+
       <section className="products-section">
         {/* Background Shapes */}
         <div className="bg-sunburst-ring" />
@@ -354,6 +367,8 @@ export default function Pageproduct() {
                 src={selectedProduct.images ? selectedProduct.images[currentImgIndex] : ""}
                 alt={selectedProduct.name}
                 className="carousel-image"
+                loading="eager"
+                fetchPriority="high"
                 onError={(e) => {
                   e.target.src = "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1000&auto=format&fit=crop";
                 }}
@@ -487,7 +502,7 @@ export default function Pageproduct() {
             <div className="sidebar-contact-box">
               <h4>Need Custom Dimensions?</h4>
               <p>We supply custom sheet length, GSM, and colors as per your requirement.</p>
-              <a href="tel:+919904743373" className="sidebar-phone-btn">
+              <a href="tel:+919904743343" className="sidebar-phone-btn">
                 📞 +91 99047 43343
               </a>
             </div>

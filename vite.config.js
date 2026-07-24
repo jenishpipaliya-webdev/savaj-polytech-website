@@ -12,4 +12,4 @@ export default defineConfig({
       webp: { lossless: true },
     }),
   ],
-});
+}); 
