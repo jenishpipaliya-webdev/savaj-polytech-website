@@ -38,13 +38,11 @@
   margin: 0;
   padding: 2px 0;
 
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
+
+
 }
 
-.navbar-brand:hover .brand-logo-svg {
-  transform: scale(1.03);
-}
+
 
 /* Desktop Nav Center */
 .desktop-nav {
