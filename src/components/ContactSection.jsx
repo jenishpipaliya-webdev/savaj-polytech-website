@@ -154,7 +154,7 @@ export default function ContactSection() {
               <span className="info-label">Call Us Now</span>
               <p className="info-content">
                 Talk to us and see how we can work together (
-                <a href="tel:+919904743343" className="info-highlight-link">+91 99047 43343</a>)
+                <a href="tel:+919033602671" className="info-highlight-link">+91 90336 02671</a>)
               </p>
             </div>
           </div>

@@ -3,6 +3,10 @@ import { ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './AboutValues.css';
+import { img } from 'framer-motion/client';
+import visionImg from "../assets/vision.avif";
+import missionImg from "../assets/mision.avif";
+import coreValuesImg from "../assets/corevalue.avif";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,22 +15,22 @@ export default function AboutValues() {
   const cardsRef = useRef(null);
 
   const valuesData = [
-    {
-      title: "Vision",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      desc: "To be a globally trusted leader in high-performance PP corrugated sheet manufacturing, setting new benchmarks in sustainable packaging and industrial innovation."
-    },
-    {
-      title: "Mission",
-      image: "https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=800&q=80",
-      desc: "To deliver precision-engineered polypropylene solutions through continuous technological advancements, rigorous quality control, and exceptional client-first service."
-    },
-    {
-      title: "Core Values",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-      desc: "Integrity in every partnership, uncompromised material quality, customer-centric customization, and a commitment to eco-friendly 100% recyclable production."
-    }
-  ];
+  {
+    title: "Vision",
+    image: visionImg,
+    desc: "To be a globally trusted leader in high-performance PP corrugated sheet manufacturing, setting new benchmarks in sustainable packaging and industrial innovation."
+  },
+  {
+    title: "Mission",
+    image: missionImg,
+    desc: "To deliver precision-engineered polypropylene solutions through continuous technological advancements, rigorous quality control, and exceptional client-first service."
+  },
+  {
+    title: "Core Values",
+    image: coreValuesImg,
+    desc: "Integrity in every partnership, uncompromised material quality, customer-centric customization, and a commitment to eco-friendly 100% recyclable production."
+  }
+];
 
   useEffect(() => {
     const ctx = gsap.context(() => {

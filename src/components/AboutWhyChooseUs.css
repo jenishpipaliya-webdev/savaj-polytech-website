@@ -229,6 +229,7 @@
 }
 
 .about-phone-number {
+  display: flex;
   font-size: 1.45rem;
   font-weight: 700;
   color: #ffffff;

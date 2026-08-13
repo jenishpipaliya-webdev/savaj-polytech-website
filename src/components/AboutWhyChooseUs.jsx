@@ -116,9 +116,10 @@ const AboutWhyChooseUs = () => {
             </div>
             <div>
               <p className="about-phone-label">CALL US NOW</p>
-              <a href="tel:+919904743373" className="about-phone-number">
-                +91 99047 43373
+              <a href="tel:+919033602671" className="about-phone-number">
+                +91 90336 02671
               </a>
+              
             </div>
           </div>
 
