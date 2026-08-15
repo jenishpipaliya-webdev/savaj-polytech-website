@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import savajLogoSvg from '../assets/savajlogoorange5.svg';
+import savajLogoSvg from '../assets/savajlogofull.svg';
 import './Footer.css';
 
 export default function Footer() {

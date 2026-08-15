@@ -17,7 +17,7 @@ export default function ContactSection() {
   });
 
   // 🔗 GOOGLE APPS SCRIPT WEB APP URL HERE
-  const GOOGLE_SHEET_WEB_APP_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+  const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwdUYZpxIsHMpO_xboOtdDNiYAtOwFEjqcjWdcrUAb1pqNdU-YaWUuatw2ZzKaWRtfZpw/exec";
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
